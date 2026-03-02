@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — Collegesarthi</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="admin-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="admin-sidebar">
+    <div class="admin-sidebar-header">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">🎓</div>
+        <span style="color: #fff; font-size: 17px;">Collegesarthi</span>
+      </a>
+      <div style="margin-top: 8px; font-size: 11px; color: var(--slate-500); font-family: var(--font-display); font-weight: 600; letter-spacing: .04em;">ADMIN PANEL</div>
+    </div>
+
+    <nav class="admin-nav">
+      <div class="admin-nav-label">Main</div>
+      <div class="admin-nav-item active">
+        <span class="admin-nav-icon">📊</span> Dashboard
+      </div>
+      <div class="admin-nav-item">
+        <span class="admin-nav-icon">👥</span> Users
+      </div>
+      <div class="admin-nav-item">
+        <span class="admin-nav-icon">💰</span> Revenue
+      </div>
+      <div class="admin-nav-item">
+        <span class="admin-nav-icon">📈</span> Analytics
+      </div>
+
+      <div class="admin-nav-label" style="margin-top: 8px;">Data</div>
+      <div class="admin-nav-item">
+        <span class="admin-nav-icon">🏫</span> Colleges
+      </div>
+      <div class="admin-nav-item">
+        <span class="admin-nav-icon">📂</span> Cutoff Data
+      </div>
+      <div class="admin-nav-item">
+        <span class="admin-nav-icon">🔧</span> Settings
+      </div>
+
+      <div class="admin-nav-label" style="margin-top: 8px;">Support</div>
+      <div class="admin-nav-item">
+        <span class="admin-nav-icon">📬</span> Messages
+        <span style="margin-left: auto; background: var(--blue-500); color: #fff; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 100px;">4</span>
+      </div>
+      <div class="admin-nav-item">
+        <span class="admin-nav-icon">🎫</span> Refunds
+      </div>
+
+      <div style="margin-top: auto; padding-top: 40px;">
+        <a href="index.html" class="admin-nav-item" style="color: var(--red-500);">
+          <span class="admin-nav-icon">🚪</span> Logout
+        </a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="admin-main">
+    <!-- TOP BAR -->
+    <div class="admin-topbar">
+      <div class="admin-topbar-title">Dashboard Overview</div>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <span style="font-size: 13px; color: var(--slate-500);">Last updated: Just now</span>
+        <div style="width: 36px; height: 36px; background: linear-gradient(135deg, var(--blue-400), var(--blue-700)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 14px;">A</div>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="admin-content">
+
+      <!-- STAT CARDS -->
+      <div class="admin-stats" id="adminStats">
+        <div class="admin-stat-card">
+          <div class="admin-stat-header">
+            <span class="admin-stat-label">Total Users</span>
+            <div class="admin-stat-icon icon-blue">👥</div>
+          </div>
+          <span class="admin-stat-value" data-target="12847" id="statTotalUsers">0</span>
+          <span class="admin-stat-trend trend-up">↑ 18.2% this month</span>
+        </div>
+        <div class="admin-stat-card">
+          <div class="admin-stat-header">
+            <span class="admin-stat-label">Paid Users</span>
+            <div class="admin-stat-icon icon-green">💳</div>
+          </div>
+          <span class="admin-stat-value" data-target="3241" id="statPaidUsers">0</span>
+          <span class="admin-stat-trend trend-up">↑ 24.7% this month</span>
+        </div>
+        <div class="admin-stat-card">
+          <div class="admin-stat-header">
+            <span class="admin-stat-label">Conversion Rate</span>
+            <div class="admin-stat-icon icon-amber">🎯</div>
+          </div>
+          <span class="admin-stat-value" id="statConversion">0%</span>
+          <span class="admin-stat-trend trend-up">↑ 2.1% from last month</span>
+        </div>
+        <div class="admin-stat-card">
+          <div class="admin-stat-header">
+            <span class="admin-stat-label">Total Revenue</span>
+            <div class="admin-stat-icon icon-purple">₹</div>
+          </div>
+          <span class="admin-stat-value" id="statRevenue">₹0</span>
+          <span class="admin-stat-trend trend-up">↑ 31.4% this month</span>
+        </div>
+      </div>
+
+      <!-- CHART + MINI TABLE -->
+      <div class="admin-grid-2">
+        <!-- CHART -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <span class="admin-card-title">Monthly Signups</span>
+            <span style="font-size: 12px; color: var(--slate-400);">Jan – Jun 2024</span>
+          </div>
+          <div class="admin-card-body">
+            <div class="chart-container">
+              <div class="chart-bars" id="chartBars">
+                <!-- Injected by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- REVENUE BREAKDOWN -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <span class="admin-card-title">Revenue Breakdown</span>
+            <span style="font-size: 12px; color: var(--slate-400);">This Month</span>
+          </div>
+          <div class="admin-card-body">
+            <div id="revenueBreakdown">
+              <!-- Injected by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- USERS TABLE -->
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <span class="admin-card-title">Recent Users</span>
+          <div class="table-search">
+            <input type="text" id="userSearch" placeholder="Search by name or email…" />
+          </div>
+        </div>
+        <div class="admin-table-wrap">
+          <table id="usersTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>JEE Rank</th>
+                <th>Category</th>
+                <th>Plan</th>
+                <th>Joined</th>
+                <th>Revenue</th>
+              </tr>
+            </thead>
+            <tbody id="usersTableBody">
+              <!-- Injected by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

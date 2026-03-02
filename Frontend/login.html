@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — Collegesarthi</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="login-page">
+    <div class="login-card">
+      <div class="login-logo">
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-icon" style="width: 44px; height: 44px; font-size: 22px;">🎓</div>
+          <span style="font-size: 22px;">Collegesarthi</span>
+        </a>
+      </div>
+
+      <h1 class="login-heading">Welcome back</h1>
+      <p class="login-sub">Sign in to access your college predictions and reports.</p>
+
+      <div class="alert alert-error" id="loginError">
+        ❌ Incorrect email or password. Please try again.
+      </div>
+      <div class="alert alert-success" id="loginSuccess">
+        ✅ Login successful! Redirecting…
+      </div>
+
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address</label>
+          <input class="form-input" type="email" id="email" placeholder="you@example.com" autocomplete="email" />
+          <span class="form-error" id="emailError">Please enter a valid email address</span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password" style="display: flex; justify-content: space-between; align-items: center;">
+            Password
+            <a href="#" style="font-size: 13px; color: var(--blue-500); font-weight: 600;">Forgot password?</a>
+          </label>
+          <input class="form-input" type="password" id="password" placeholder="Enter your password" autocomplete="current-password" />
+          <span class="form-error" id="passwordError">Password must be at least 6 characters</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 24px;">
+          <input type="checkbox" id="remember" style="accent-color: var(--blue-500);" />
+          <label for="remember" style="font-size: 14px; color: var(--slate-600);">Remember me for 30 days</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;" id="loginBtn">
+          Sign In →
+        </button>
+      </form>
+
+      <div style="display: flex; align-items: center; gap: 12px; margin: 24px 0;">
+        <div style="flex: 1; height: 1px; background: var(--slate-200);"></div>
+        <span style="font-size: 12px; color: var(--slate-400);">or</span>
+        <div style="flex: 1; height: 1px; background: var(--slate-200);"></div>
+      </div>
+
+      <a href="predictor.html" class="btn btn-outline" style="width: 100%; justify-content: center;">
+        Continue Without Login (Free)
+      </a>
+
+      <p class="login-footer">
+        Don't have an account? <a href="pricing.html">Start with Free →</a>
+      </p>
+
+      <p style="text-align: center; font-size: 12px; color: var(--slate-400); margin-top: 16px;">
+        🔒 Admin login: use admin@collegesarthi.com
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

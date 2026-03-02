@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Collegesarthi</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="navbar scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">🎓</div>
+        Collegesarthi
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="predictor.html">Predictor</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="predictor.html" class="btn btn-primary btn-sm">Try Free →</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="predictor.html">Predictor</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="contact-hero">
+    <div class="container">
+      <div class="section-label">📬 Get In Touch</div>
+      <h1 class="display-lg" style="margin-bottom: 12px;">We're Here to Help</h1>
+      <p class="body-lg" style="max-width: 480px; margin: 0 auto;">Have a question about predictions, billing, or counselling? Our team typically responds within 4 hours.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT GRID -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Info Card -->
+        <div class="contact-info-card">
+          <h3>Contact Information</h3>
+          <p>Reach us through any of these channels. We're a small team that cares deeply about student outcomes.</p>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📧</div>
+            <div class="contact-detail-text">
+              <label>Email</label>
+              <span>support@collegesarthi.com</span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📱</div>
+            <div class="contact-detail-text">
+              <label>WhatsApp (Premium)</label>
+              <span>+91 98765 43210</span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">⏰</div>
+            <div class="contact-detail-text">
+              <label>Response Time</label>
+              <span>Mon–Sat, within 4 hours</span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📍</div>
+            <div class="contact-detail-text">
+              <label>Based In</label>
+              <span>New Delhi, India</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.08);">
+            <p style="font-size: 13px; color: var(--slate-500); margin-bottom: 16px;">Follow us for JEE tips, cutoff updates, and college insights:</p>
+            <div class="footer-social">
+              <a href="#" title="Twitter" style="background: rgba(255,255,255,.08);">𝕏</a>
+              <a href="#" title="Instagram" style="background: rgba(255,255,255,.08);">📸</a>
+              <a href="#" title="YouTube" style="background: rgba(255,255,255,.08);">▶</a>
+              <a href="#" title="Telegram" style="background: rgba(255,255,255,.08);">✈</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-card">
+          <div id="contactFormWrap">
+            <h2 class="display-md" style="margin-bottom: 6px;">Send a Message</h2>
+            <p class="body-md" style="margin-bottom: 28px;">Fill in the details below and we'll get back to you shortly.</p>
+
+            <form id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="cName">Full Name *</label>
+                  <input class="form-input" type="text" id="cName" placeholder="Arjun Mehta" />
+                  <span class="form-error" id="cNameError">Please enter your name</span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="cEmail">Email *</label>
+                  <input class="form-input" type="email" id="cEmail" placeholder="arjun@example.com" />
+                  <span class="form-error" id="cEmailError">Please enter a valid email</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cSubject">Subject *</label>
+                <select class="form-select" id="cSubject">
+                  <option value="">Select a subject</option>
+                  <option value="prediction">Prediction accuracy issue</option>
+                  <option value="billing">Billing / Payment issue</option>
+                  <option value="refund">Refund request</option>
+                  <option value="counselling">Counselling query</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="form-error" id="cSubjectError">Please select a subject</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cMessage">Message *</label>
+                <textarea class="form-input" id="cMessage" placeholder="Describe your issue or question in detail…" rows="5" style="resize: vertical; line-height: 1.6;"></textarea>
+                <span class="form-error" id="cMessageError">Please enter a message (at least 20 characters)</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">
+                Send Message →
+              </button>
+            </form>
+          </div>
+
+          <div class="contact-success" id="contactSuccess">
+            <div class="success-icon">🎉</div>
+            <h3>Message Sent!</h3>
+            <p class="body-md">Thanks for reaching out. We'll respond to <strong id="submittedEmail"></strong> within 4 hours.</p>
+            <a href="predictor.html" class="btn btn-primary" style="margin-top: 24px;">Back to Predictor →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <a href="index.html" class="nav-logo" style="color: var(--slate-400);">
+          <div class="nav-logo-icon" style="width: 28px; height: 28px; font-size: 14px;">🎓</div>
+          Collegesarthi
+        </a>
+        <span>© 2024 Collegesarthi. All rights reserved.</span>
+        <span style="color: var(--slate-600);">support@collegesarthi.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

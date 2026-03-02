@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>College Predictor — Collegesarthi</title>
+  <meta name="description" content="Enter your JEE rank to get personalized IIT, NIT and GFTI college predictions." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="navbar scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">🎓</div>
+        Collegesarthi
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="predictor.html" class="active">Predictor</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="pricing.html" class="btn btn-primary btn-sm">Upgrade Pro →</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="predictor.html">Predictor</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="predictor-hero">
+    <div class="container">
+      <div class="section-label">🔍 JEE College Predictor</div>
+      <h1 class="display-lg" style="margin-bottom: 12px;">Predict Your Best-Fit Colleges</h1>
+      <p class="body-lg" style="max-width: 500px; margin: 0 auto;">Enter your details below. We'll match you with Dream, Target, and Safe colleges using verified JoSAA cutoff data.</p>
+    </div>
+  </section>
+
+  <!-- PREDICTOR FORM -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="predictor-form-card">
+        <h2 class="display-md" style="margin-bottom: 6px;">Your Details</h2>
+        <p class="body-md" style="margin-bottom: 28px;">All fields are required for accurate predictions.</p>
+
+        <form id="predictorForm" novalidate>
+
+  <!-- Rank -->
+  <div class="form-group">
+    <label class="form-label" for="rank">JEE Rank *</label>
+    <input class="form-input" type="number" id="rank"
+      placeholder="e.g. 8420" min="1" required />
+  </div>
+
+  <!-- Quota -->
+  <div class="form-group">
+    <label class="form-label" for="quota">Quota *</label>
+    <select class="form-select" id="quota" required>
+      <option value="">Select quota</option>
+      <option value="AI">All India (AI)</option>
+      <option value="HS">Home State (HS)</option>
+      <option value="OS">Other State (OS)</option>
+    </select>
+  </div>
+
+  <!-- Seat Type -->
+  <div class="form-group">
+    <label class="form-label" for="seatType">Seat Type *</label>
+    <select class="form-select" id="seatType" required>
+      <option value="">Select category</option>
+      <option value="OPEN">General (OPEN)</option>
+      <option value="OBC-NCL">OBC-NCL</option>
+      <option value="SC">SC</option>
+      <option value="ST">ST</option>
+      <option value="EWS">EWS</option>
+    </select>
+  </div>
+
+  <!-- Gender -->
+  <div class="form-group">
+    <label class="form-label" for="gender">Gender *</label>
+    <select class="form-select" id="gender" required>
+      <option value="">Select gender</option>
+      <option value="Gender-Neutral">Gender Neutral</option>
+      <option value="Female-only (including Supernumerary)">
+        Female Only
+      </option>
+    </select>
+  </div>
+
+  <!-- Round -->
+  <div class="form-group">
+    <label class="form-label" for="round">Counselling Round *</label>
+    <select class="form-select" id="round" required>
+      <option value="1">Round 1</option>
+      <option value="2">Round 2</option>
+      <option value="3">Round 3</option>
+      <option value="4">Round 4</option>
+      <option value="5">Round 5</option>
+      <option value="6">Round 6</option>
+    </select>
+  </div>
+
+  <!-- Year -->
+  <div class="form-group">
+    <label class="form-label" for="year">Year *</label>
+    <select class="form-select" id="year" required>
+      <option value="2018">2018</option>
+      <option value="2019">2019</option>
+      <option value="2020">2020</option>
+      <option value="2021">2021</option>
+      <option value="2022">2022</option>
+      <option value="2023">2023</option>
+    </select>
+  </div>
+
+  <button type="submit"
+    class="btn btn-primary btn-lg"
+    style="width: 100%; justify-content: center; margin-top: 8px;"
+    id="predictBtn">
+    🔍 Predict My Colleges
+  </button>
+
+</form>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="results-section" id="resultsSection">
+        <div class="text-center" style="margin-bottom: 40px;">
+          <h2 class="display-md">Your Personalized College List</h2>
+          <p class="body-md" id="resultsSummary" style="margin-top: 8px;"></p>
+        </div>
+
+        <div class="results-grid" id="resultsGrid">
+          <!-- Injected by JS -->
+        </div>
+
+        <div class="results-locked-section" style="margin-top: 20px;">
+          <div class="results-locked-grid" id="lockedGrid">
+            <!-- Blurred locked cards injected by JS -->
+          </div>
+          <div class="lock-cta">
+            <div class="lock-cta-card">
+              <div class="lock-icon">🔒</div>
+              <h3>Unlock 12+ More Colleges</h3>
+              <p>Your free plan shows 3 predictions. Upgrade to Pro to unlock your full college list, cutoff trends, and seat availability data.</p>
+              <a href="pricing.html" class="btn btn-primary">Unlock Pro — ₹99 →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top: 48px; padding: 32px; background: var(--blue-50); border-radius: var(--radius-lg); border: 1px solid var(--blue-100);">
+          <p style="font-size: 13px; color: var(--slate-500);">📌 Data sourced from official JoSAA 2018–2024 cutoff records. Predictions are based on closing ranks. Actual results may vary slightly depending on round and seat availability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <a href="index.html" class="nav-logo" style="color: var(--slate-400);">
+          <div class="nav-logo-icon" style="width: 28px; height: 28px; font-size: 14px;">🎓</div>
+          Collegesarthi
+        </a>
+        <span>© 2024 Collegesarthi. All rights reserved.</span>
+        <a href="pricing.html" style="color: var(--blue-400);">Upgrade to Pro →</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
